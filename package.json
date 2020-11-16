@@ -1,0 +1,25 @@
+{
+  "name": "iwantmccbot",
+  "version": "1.0.0",
+  "description": "Because talking to people is social interaction, and I don't like it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the1sword/iwantmccbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the1sword/iwantmccbot/issues"
+  },
+  "homepage": "https://github.com/the1sword/iwantmccbot#readme",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0"
+  }
+}
