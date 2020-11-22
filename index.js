@@ -1,56 +1,59 @@
 /**
  * I Want MCC Bot
- * Because life is a lie and I have no life.
+ * Developed by Sword
+ * 
+ * A WARNING:
+ * This was written as a very not serious project. 
+ * I do not intend to make this mess of code better, only to add items to the endless list of the people who want to join MCC.
  */
 
  const Discord = require('discord.js')
  require('dotenv').config()
- const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-
- const csvWriter = createCsvWriter({
-    path: 'list.csv',
-    header: [
-        {id: 'string', title: 'NAME'},
-        {id: 'user', title: 'USR'}
-    ]
-});
-const records = [
-    ['Bob',  'French, English'],
-    ['Mary', 'English']
-];
- 
-csvWriter.writeRecords(records)       // returns a promise
-    .then(() => {
-        console.log('...Done');
-    });
-
 
  const questionCheck = require("./checkFunction")
 
- // const client = new Discord.Client()
+ const client = new Discord.Client()
 
  const embed = new Discord.MessageEmbed()
     .setTitle("How do I get into MCC?")
     .setDescription("MC Championships is an invite only streamer event! If you're wondering how the teams are picked, watch this video by the team organizer, Dangthatsalongname: https://www.youtube.com/watch?v=cwZwMSXAbUg \n\nWhile we hosted two viewer teams for MCC 10, we have not announced any plans to do the same for any future events.")
-    .setDescription("Auto MCC Answer Bot. A bad idea with a worse execution.")
+    .setColor("GOLD")
+    .setFooter("A very bad idea, by Sword")
 
- // client.login(process.env.DTOKEN)
+  client.login(process.env.DTOKEN)
 
- /*
+ 
+  client.on('ready', async (client) => {
+      console.log('I AM READY!')
+  })
+
  client.on('message', async (message) => {
 
-    if (!message.guild || message.author.bot) return;
+    if (!message.guild) return; // Ignore DMs
+    if (message.author.bot) return; // Ignore bot users (and the bot itself!)
 
-    if (message.author.id === "248540313059196928") message.author.level = "42";
+    if (message.content.startsWith('!')) {
+        
+        const args = message.content.slice(1).trim().split(/ +/g);
+        const command = args.shift().toLowerCase();
 
-    if (questionCheck(message)) {
-        message.reply(embed)
-    }
+        if (command === "mcc") {
+            message.delete()
+            message.channel.send(embed)
+        };
+    };
 
-    const args = message.content.slice(1).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-
-    if (command === "addq") {
-
-    }
- })*/
+    const responseObject = [
+        "how do i join mcc?", 
+        "how do i get into mcc?",
+        "mcc ip?",
+        "how do i join mcc",
+        "where is the mcc signup",
+        "how do I get picked for mcc"
+    ]
+      
+      if(responseObject.includes(message.content.toLowerCase())) {
+        message.channel.send(embed);
+      }
+    
+});
