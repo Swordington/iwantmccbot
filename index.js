@@ -10,7 +10,7 @@
  const Discord = require('discord.js')
  require('dotenv').config()
 
- const questionCheck = require("./checkFunction")
+const triggers = require('./triggers')
 
  const client = new Discord.Client()
 
@@ -43,16 +43,8 @@
         };
     };
 
-    const responseObject = [
-        "how do i join mcc?", 
-        "how do i get into mcc?",
-        "mcc ip?",
-        "how do i join mcc",
-        "where is the mcc signup",
-        "how do I get picked for mcc"
-    ]
       
-      if(responseObject.includes(message.content.toLowerCase())) {
+      if(triggers.includes(message.content.toLowerCase())) {
         message.channel.send(embed);
       }
     
