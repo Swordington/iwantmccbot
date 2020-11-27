@@ -43,8 +43,9 @@ const triggers = require('./triggers')
         };
     };
 
+
       
-      if(triggers.includes(message.content.toLowerCase())) {
+      if(triggers(message.content)) {
         message.channel.send(embed);
       }
     
