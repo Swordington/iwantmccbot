@@ -10,7 +10,6 @@
  const Discord = require('discord.js')
  require('dotenv').config()
 
- const questionCheck = require("./checkFunction")
 
  const client = new Discord.Client()
 
