@@ -12,6 +12,7 @@
 
 const triggers = require('./triggers')
 
+
  const client = new Discord.Client()
 
  const embed = new Discord.MessageEmbed()
