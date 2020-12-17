@@ -8,7 +8,7 @@ Because talking to people is social interaction, and I don't like it.
 If, for some ungodly reason, you want to deploy this bot:
 
 * You MUST have NPM and Node.js installed for it to work. If you're not sure how, the internet wll help.
-* This project takes ~50mb of storage, so please don't have a 100% full disk.
+* This project takes ~3-4mb of storage, so please don't have a 100% full disk.
 * You need to create a discord bot, do that over at the [Discord Developers Portal](https://discord.com/developers/applications/me)
 
 1) Download the zip file of this repo, and unzip it. 
